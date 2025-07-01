@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book Car - RentDrive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-4">Book Car</h2>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img th:src="${car.imageUrl}" class="img-fluid rounded-start" alt="Car Image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${car.brand + ' ' + car.model}"></h5>
+                    <p class="card-text"><strong>Rent per day:</strong> ₹<span th:text="${car.rentPerDay}"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form th:action="@{/customer/book-car}" method="post" th:object="${bookingRequest}" class="row g-3">
+        <input type="hidden" th:field="*{carId}" />
+        <div class="col-md-6">
+            <label class="form-label">Start Date</label>
+            <input type="date" th:field="*{startDate}" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">End Date</label>
+            <input type="date" th:field="*{endDate}" class="form-control" required>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-success"><i class="bi bi-check2-circle"></i> Confirm Booking</button>
+            <a th:href="@{/customer/dashboard}" class="btn btn-secondary ms-2">Cancel</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

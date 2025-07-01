@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+<nav class="navbar" th:fragment="navbar">
+    <div class="navbar-container">
+        <a class="navbar-brand" th:href="@{/}">Aditya</a>
+        <div class="navbar-links">
+
+            <!-- Show only when NOT logged in -->
+            <a class="nav-link" th:href="@{/login}" sec:authorize="!isAuthenticated()">Login</a>
+            <a class="nav-link" th:href="@{/register}" sec:authorize="!isAuthenticated()">Register</a>
+
+            <!-- Show if logged in as CUSTOMER -->
+            <a class="nav-link" th:href="@{/customer/dashboard}" sec:authorize="hasRole('CUSTOMER')">Dashboard</a>
+            <a class="nav-link" th:href="@{/customer/my-bookings}" sec:authorize="hasRole('CUSTOMER')">My Bookings</a>
+
+            <!-- Show if logged in as ADMIN -->
+            <a class="nav-link" th:href="@{/admin/dashboard}" sec:authorize="hasRole('ADMIN')">Admin Dashboard</a>
+            <a class="nav-link" th:href="@{/admin/view-bookings}" sec:authorize="hasRole('ADMIN')">Manage Bookings</a>
+
+            <!-- Logout for all authenticated users -->
+            <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()" style="display: inline;">
+                <button class="nav-link logout-btn" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

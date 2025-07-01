@@ -1,0 +1,145 @@
+/* General Reset (required) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #d3d3d3;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* Landing Page Layout */
+.landing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    min-height: calc(100vh - 80px);
+    background-color: #d3d3d3;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.thin-text {
+    font-weight: 400;
+    font-size: 36px;
+}
+
+.bold-text {
+    font-weight: 700;
+    font-size: 52px;
+    color: #000;
+}
+
+/* Description */
+.hero-description {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-custom {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #333;
+}
+
+.btn-custom-outline {
+    background-color: transparent;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 15px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-outline:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-section .car-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .landing-container {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .left-section {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero-text {
+        font-size: 32px;
+    }
+
+    .thin-text {
+        font-size: 28px;
+    }
+
+    .bold-text {
+        font-size: 36px;
+    }
+
+    .right-section .car-image {
+        max-width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,202 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #d3d3d3;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+/* FLEX wrapper for login/register page */
+.login-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 40px;
+}
+
+/* Login Image */
+.login-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%; /* Changed from 40% to match register */
+    padding: 0;
+}
+
+.car-image {
+    width: auto;
+    height: 70vh; /* Reduced from 80vh */
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Login Container (same sizing as register) */
+.login-container,
+.register-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Login/Register Card */
+.login-card {
+    background-color: #d3d3d3;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+/* Headings */
+.login-title {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Form Styling */
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #000;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 2px solid #888;
+    border-radius: 6px;
+    outline: none;
+    background-color: #d3d3d3;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #555;
+}
+
+/* Autofill fix */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #d3d3d3 inset;
+    box-shadow: 0 0 0px 1000px #d3d3d3 inset;
+    -webkit-text-fill-color: #000;
+}
+
+/* Button */
+.btn-custom {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-custom:hover {
+    background-color: #333;
+}
+
+/* Extra links */
+.extra-links {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.extra-links a {
+    color: #000;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}
+
+/* Alerts */
+.alert-error,
+.alert-success {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.alert-error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.alert-success {
+    background-color: rgb(128, 128, 128);
+    color: white;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .login-image,
+    .login-container,
+    .register-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .car-image {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+
+    .login-card {
+        box-shadow: none;
+        padding: 25px 18px;
+        margin-top: 20px;
+        max-width: 90%;
+    }
+}

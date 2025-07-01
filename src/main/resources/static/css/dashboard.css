@@ -1,0 +1,153 @@
+/* --- General Reset --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #d3d3d3;
+    color: #000;
+}
+
+/* --- Admin Dashboard Specific Styles --- */
+.dashboard-container {
+    padding: 40px;
+    background-color: #d3d3d3;
+    min-height: calc(100vh - 70px);
+}
+
+.dashboard-heading {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #000;
+    text-align: center;
+}
+
+/* --- Alert Box --- */
+.alert-warning {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* --- Grid Layout --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* --- Car Card --- */
+.car-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.car-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.car-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Car Details --- */
+.car-details {
+    padding: 20px;
+    text-align: left;
+}
+
+.car-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.car-details p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #444;
+}
+
+/* --- Status Badge --- */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-badge.green {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-badge.gray {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* --- Delete Button --- */
+/* --- Delete Button (Now Black) --- */
+.btn-danger-sm {
+    background-color: #000; /* changed from red */
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 12px;
+}
+
+.btn-danger-sm:hover {
+    background-color: #333; /* darker black on hover */
+}
+
+
+/* --- Responsive Fixes --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 20px;
+        flex-direction: column;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .dashboard-container {
+        padding: 20px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}

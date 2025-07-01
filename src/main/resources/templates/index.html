@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Welcome to RentDrive</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+<link rel="stylesheet" th:href="@{/css/navbar.css}">
+<link rel="stylesheet" th:href="@{/css/landing.css}">
+    
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div> 
+
+<!-- Landing Content -->
+<div class="landing-container">
+    <!-- Left Section -->
+    <div class="left-section">
+<h1 class="hero-text">
+    <span class="thin-text">Let’s ride</span><br>
+    <span class="bold-text">The Future</span>
+</h1>
+
+        <p class="hero-description">
+            RentDrive is your go-to car rental platform — find, book, and ride your dream car in just a few clicks.
+        </p>
+        <div class="button-group">
+            <a th:href="@{/login}" class="btn-custom">Login</a>
+            <a th:href="@{/register}" class="btn-custom-outline">Register</a>
+        </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+        <img th:src="@{/images/car.png}" alt="Car" class="car-image">
+    </div>
+</div>
+
+</body>
+</html>
